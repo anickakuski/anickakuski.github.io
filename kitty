@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Svět milovníků koček 🐱</title>
+    <style>
+        body {
+            /* Pěkné gradientní pozadí (můžeš změnit barvy) */
+            background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 99%, #fad0c4 100%);
+            margin: 0;
+            height: 100vh;
+            overflow: hidden; /* Zabrání posuvníkům, když GIF vyletí z obrazovky */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #fff;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        h1 {
+            font-size: 3rem;
+            z-index: 10; /* Zajistí, že text bude nad létajícím GIFem */
+        }
+
+        /* Styl pro létající GIF */
+        .flying-cat {
+            position: fixed;
+            width: 150px; /* Nastav si velikost GIFu */
+            z-index: 5; /* GIF bude pod textem, ale nad pozadím */
+            pointer-events: none; /* Kliknutí projdou skrz GIF na text pod ním */
+            
+            /* Spuštění animace: jméno, délka, způsob (linear=rovnoměrně), opakování */
+            animation: flyingCatAnimation 15s linear infinite;
+        }
+
+        /* Definice animace pohybu */
+        @keyframes flyingCatAnimation {
+            0% {
+                top: -150px; /* Začíná těsně nad horním okrajem */
+                left: -150px; /* Začíná těsně za levým okrajem */
+                transform: rotate(0deg); /* Bez otočení */
+            }
+            25% {
+                top: 20vh; /* 20% výšky obrazovky */
+                left: 80vw; /* 80% šířky obrazovky */
+                transform: rotate(20deg); /* Mírné otočení */
+            }
+            50% {
+                top: 80vh; /* 80% výšky obrazovky */
+                left: 50vw; /* Střed šířky obrazovky */
+                transform: rotate(-10deg); /* Otočení na druhou stranu */
+            }
+            75% {
+                top: 50vh; /* Střed výšky obrazovky */
+                left: 10vw; /* 10% šířky obrazovky */
+                transform: rotate(15deg); /* Zase mírné otočení */
+            }
+            100% {
+                top: 110vh; /* Skončí pod spodním okrajem */
+                left: 110vw; /* Skončí za pravým okrajem */
+                transform: rotate(0deg); /* Bez otočení na konci */
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Mňau! Vitejte ve světě koček! 🐾</h1>
+
+    <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExdWpydmtxdzBwYWp5Nms5MzN5NmdxeWFoYmxsYmF0ZHlndzh4OTJ6ciZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/MDJ9IbxxvDUQM/giphy.gif" alt="Roztomilá létající kočička" class="flying-cat">
+
+</body>
+</html>
